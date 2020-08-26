@@ -12,7 +12,7 @@ export default class MyNavbar extends Component {
                 <BrowserRouter>
                     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                         <Link className="navbar-brand" to="/">
-                            <img className="logo" src="/amazon.png" alt=""/>
+                            <img className="logo" src="/store.png" alt=""/>
                         </Link>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navItems" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
