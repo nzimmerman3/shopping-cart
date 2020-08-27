@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "name": "Nike SuperRep Go", 
         "description": "The Nike SuperRep Go combines comfortable foam cushioning, flexibility and support to get you moving in circuit-based fitness classes or while streaming workouts at home.",
         "price": 100,
@@ -7,12 +8,14 @@
         "type": "shoe"
     },
     {
+        "id": 2,
         "name": "Nike Air Force 1 '07", 
         "description": "The Nike Air Force 1 ’07 is the b-ball OG that puts a fresh spin on what you know best: crisp leather, bold colors and the perfect amount of flash to let you shine.",
         "price": 90.00,
         "image": "/images/shoe-2.jpg"
     },
     {
+        "id": 3,
         "name": "Nike Blazer Mid '77 Vintage", 
         "description": "The Nike Blazer Mid '77 Vintage harnesses the old-school look of Nike basketball with a vintage midsole finish, making it look like you've been saving them for years.",
         "price": 100.00,
@@ -20,6 +23,7 @@
         "type": "shoe"
     },
     {
+        "id": 4,
         "name": "Zoom Freak 2", 
         "description": "Giannis possesses a freakish combination of height, length and speed rarely seen in the league. The Zoom Freak 2 harnesses his power and helps enable him to generate force to help drive him down the court. A molded overlay caps the outer toe area to help contain Giannis' devastating Euro step move.",
         "price": 100,
@@ -27,6 +31,7 @@
         "type": "shoe"
     },
     {
+        "id": 5,
         "name": "NikeLab", 
         "description": "A classic never goes out of the style. Heavyweight fabric mixes with a loose fit on the NikeLab T-Shirt for a premium look and feel.",
         "price": 40.00,
@@ -34,6 +39,7 @@
         "type": "shirt"
     },
     {
+        "id": 6,
         "name": "Nike Blazer Mid '77 Vintage", 
         "description": "Durable comfort. Rock-solid stitching. Classic style. The Nike ACG T-Shirt is a must-have staple that’s anything but ordinary.",
         "price": 40.00,
@@ -41,6 +47,7 @@
         "type": "shirt"
     },
     {
+        "id": 7,
         "name": "Nike Sportswear",
         "description": "The Nike Sportswear T-Shirt sets you up with soft cotton jersey and a classic logo on the chest.",
         "price": 30.00,
