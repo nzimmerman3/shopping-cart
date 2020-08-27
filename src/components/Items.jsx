@@ -18,8 +18,8 @@ class Items extends React.Component {
                 <div className="row" style={{}}>
                     {this.state.products.map(item => {
                         return (
-                            <div className="col-md-3 d-flex">
-                                <div className="card" >
+                            <div className="col col-sm-3 d-flex">
+                                <div className="card">
                                     <div className="clickable">
                                         <img className="card-img-top" src={item.image} alt={item.name}/>
                                         <BrowserRouter>
@@ -33,7 +33,7 @@ class Items extends React.Component {
                                     <div className="card-footer">
                                         <div className="row">
                                             <div className="col">
-                                                <h5 className="card-text">{formatCurrency(item.price)}</h5>
+                                                <h5 className="card-text card-price">{formatCurrency(item.price)}</h5>
                                             </div>
                                             <div className="col text-right">
                                                 <BrowserRouter>
