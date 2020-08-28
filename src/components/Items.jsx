@@ -21,7 +21,7 @@ class Items extends React.Component {
 
   filterBy(event) {
     if (event.target.value === "") {
-      this.setState({ filter: event.target.value, products: data })
+      this.setState({ filter: event.target.value, products: data, sort: "" })
     }
     else {
       this.setState({
@@ -82,7 +82,7 @@ class Items extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col-10">
+        <div className="col-9">
           <FilterBar
             count={this.state.products.length}
             sort={this.state.sort}
@@ -98,7 +98,7 @@ class Items extends React.Component {
             })}
           </div>
         </div>
-        <div className="col-2">
+        <div className="col-3">
           <CartHeader cartItems={this.state.cartItems}/>
           <CartContents cartItems={this.state.cartItems}/>
         </div>
