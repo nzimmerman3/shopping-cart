@@ -45,7 +45,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-left: auto;
-    font-size: .5vw;
+    font-size: .7vw;
     width: 4vw;
     height: 2vw;
     padding: 0 0;
@@ -70,8 +70,13 @@ footer a{
     margin-bottom: 1rem;
     border-bottom: .1rem #c0c0c0 solid;
     justify-content: space-between;
+    font-size: 1.5vw;
 }
 
 .filter div{
     flex: 1;
+}
+
+.cart.filter{
+    text-align: center;
 }
