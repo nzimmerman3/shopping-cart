@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Cart(props) {
+export default function CartHeader(props) {
   const {cartItems} = props
   return (
     <div className="filter cart">
@@ -8,7 +8,7 @@ export default function Cart(props) {
         <div>Empty</div>
       ) : (
         <div>{cartItems.reduce((a, b) => a + b.count, 0)
-        } item{cartItems.length === 1 ? "" : "s"} in cart</div>
+        } item{cartItems.length === 1 && cartItems[0].count === 1 ? "" : "s"} in cart</div>
       )
     }
     </div>

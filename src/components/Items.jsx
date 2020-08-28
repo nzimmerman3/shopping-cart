@@ -1,7 +1,8 @@
 import React from 'react'
 import data from "../data.json"
 import FilterBar from './FilterBar'
-import Cart from './Cart'
+import CartHeader from './CartHeader'
+import CartContents from './CartContents'
 import Item from './Item';
 
 class Items extends React.Component {
@@ -25,6 +26,7 @@ class Items extends React.Component {
     else {
       this.setState({
         filter: event.target.value,
+        sort: "",
         products: data.filter(
           (product) => product.type === event.target.value
         )
@@ -97,7 +99,8 @@ class Items extends React.Component {
           </div>
         </div>
         <div className="col-2">
-          <Cart cartItems={this.state.cartItems}/>
+          <CartHeader cartItems={this.state.cartItems}/>
+          <CartContents cartItems={this.state.cartItems}/>
         </div>
       </div>
     )
