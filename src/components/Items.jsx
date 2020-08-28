@@ -3,6 +3,7 @@ import data from "../data.json"
 import FilterBar from './FilterBar'
 import CartHeader from './CartHeader'
 import CartContents from './CartContents'
+import CartFooter from './CartFooter'
 import Item from './Item';
 
 class Items extends React.Component {
@@ -98,9 +99,10 @@ class Items extends React.Component {
             })}
           </div>
         </div>
-        <div className="col-3">
+        <div className="col-3 cart">
           <CartHeader cartItems={this.state.cartItems}/>
           <CartContents cartItems={this.state.cartItems}/>
+          <CartFooter cartItems={this.state.cartItems}/>
         </div>
       </div>
     )

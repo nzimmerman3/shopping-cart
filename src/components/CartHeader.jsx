@@ -7,8 +7,8 @@ export default function CartHeader(props) {
       {cartItems.length === 0 ? (
         <div>Empty</div>
       ) : (
-        <div>{cartItems.reduce((a, b) => a + b.count, 0)
-        } item{cartItems.length === 1 && cartItems[0].count === 1 ? "" : "s"} in cart</div>
+        <div>{cartItems.reduce((a, b) => a + b.count, 0)} 
+        {" "}item{cartItems.length === 1 && cartItems[0].count === 1 ? "" : "s"} in cart</div>
       )
     }
     </div>

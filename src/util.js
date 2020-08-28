@@ -1,5 +1,5 @@
 export const formatCurrency = (num) => {
-    return "$" + Number(num.toFixed(5)).toLocaleString() + " "
+    return "$" + Number(num).toFixed(2).toLocaleString() + " "
 }
 
 export const formatDescription = (desc, limit=100) => {
