@@ -31,6 +31,14 @@ body {
     font-size: 1.5vw;
 }
 
+.cart-item {
+    display: flex;
+    font-size: 1vw;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
 .card .card-body {
     padding: .5rem;
 }
