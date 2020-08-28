@@ -5,7 +5,7 @@ import { Link, BrowserRouter } from 'react-router-dom';
 
 export default function Item(props) {
   return (
-    <div className="col col-sm-3 d-flex" style={{ "min-width": "25%" }}>
+    <div className="col col-sm-3 d-flex" style={{ "minWidth": "25%" }}>
       <div className="card">
         <div className="clickable">
           <img className="card-img-top" src={props.item.image} alt={props.item.name} />
