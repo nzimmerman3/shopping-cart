@@ -12,7 +12,8 @@
         "name": "Nike Air Force 1 '07", 
         "description": "The Nike Air Force 1 ’07 is the b-ball OG that puts a fresh spin on what you know best: crisp leather, bold colors and the perfect amount of flash to let you shine.",
         "price": 90.00,
-        "image": "/images/shoe-2.jpg"
+        "image": "/images/shoe-2.jpg",
+        "type": "shoe"
     },
     {
         "id": 3,

@@ -8,14 +8,7 @@ function App() {
     <div className="App">
       <MyNavbar />
       <div className="container-fluid">
-        <div className="row">
-          <div className="col-10">
-            <Items />
-          </div>
-          <div className="col-2">
-            shopping cart
-          </div>
-        </div>
+        <Items />
       </div>
       <footer className="footer">
         <div className="text-muted" style={{"paddingBottom": "0px", "margin-bottom": "0"}}>
