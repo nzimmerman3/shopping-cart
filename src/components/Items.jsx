@@ -36,8 +36,7 @@ class Items extends React.Component {
     const sort = event.target.value
     this.setState(state => ({
       sort: sort,
-      products: this.state.products
-        .slice()
+      products: state.products
         .sort((item1, item2) =>
           sort === "highest"
             ? item1.price < item2.price 
