@@ -13,7 +13,7 @@ class Items extends React.Component {
       products: data,
       sort: "",
       filter: "",
-      cartItems: []
+      cartItems: localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : []
     }
     this.filterBy = this.filterBy.bind(this)
     this.sortBy = this.sortBy.bind(this)
@@ -78,6 +78,7 @@ class Items extends React.Component {
     this.setState({
       cartItems: cartItems
     })
+    localStorage.setItem("cartItems", JSON.stringify(cartItems))
   }
 
   render() {
