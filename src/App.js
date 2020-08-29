@@ -1,6 +1,6 @@
 import React from 'react'
 import MyNavbar from './components/MyNavbar'
-import Items from './components/Items'
+import Content from './components/Content'
 import './scss/App.css'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <MyNavbar />
       <div className="container-fluid">
-        <Items />
+        <Content />
       </div>
       <footer className="footer">
         <div className="text-muted" style={{"paddingBottom": "0px", "marginBottom": "0"}}>

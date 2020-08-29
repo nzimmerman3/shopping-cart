@@ -8,6 +8,7 @@ export default function CartContents(props) {
           <div className="cart-item">
             <div className="cart-info">
               {item.name} x {item.count}
+              <div className="btn btn-primary" onClick={() => props.removeItem(item)}>Remove item</div>
             </div>
             <div className="cart-image">
               <img src={item.image} alt=""/>

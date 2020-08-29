@@ -6,7 +6,7 @@ import CartContents from './CartContents'
 import CartFooter from './CartFooter'
 import Item from './Item';
 
-class Items extends React.Component {
+class Content extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -18,6 +18,7 @@ class Items extends React.Component {
     this.filterBy = this.filterBy.bind(this)
     this.sortBy = this.sortBy.bind(this)
     this.addToCart = this.addToCart.bind(this)
+    this.removeItem = this.removeItem.bind(this)
   }
 
   filterBy(event) {
@@ -81,6 +82,14 @@ class Items extends React.Component {
     localStorage.setItem("cartItems", JSON.stringify(cartItems))
   }
 
+  removeItem(removedItem) {
+    this.setState(prevState => ({
+      cartItems: prevState.cartItems.filter(item => {
+        return(item.id !== removedItem.id) 
+      })
+    }))
+  }
+
   render() {
     return (
       <div className="row">
@@ -102,7 +111,7 @@ class Items extends React.Component {
         </div>
         <div className="col-3 cart">
           <CartHeader cartItems={this.state.cartItems}/>
-          <CartContents cartItems={this.state.cartItems}/>
+          <CartContents cartItems={this.state.cartItems} removeItem={this.removeItem}/>
           <CartFooter cartItems={this.state.cartItems}/>
         </div>
       </div>
@@ -110,4 +119,4 @@ class Items extends React.Component {
   }
 }
 
-export default Items
+export default Content
