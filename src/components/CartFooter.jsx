@@ -21,6 +21,8 @@ export default function CartFooter(props) {
         <span className="cart-footer-left">Total:</span>
         <span className="cart-footer-right">{formatCurrency(subtotal + tax)}</span>
       </div>
+      <br/>
+      <div className="btn btn-primary" onClick={props.checkout}>Checkout</div>
     </div>
   )
 }

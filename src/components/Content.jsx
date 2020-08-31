@@ -4,7 +4,8 @@ import FilterBar from './FilterBar'
 import CartHeader from './CartHeader'
 import CartContents from './CartContents'
 import CartFooter from './CartFooter'
-import Item from './Item';
+import Item from './Item'
+import CheckoutForm from './CheckoutForm'
 
 class Content extends React.Component {
   constructor() {
@@ -13,12 +14,21 @@ class Content extends React.Component {
       products: data,
       sort: "",
       filter: "",
-      cartItems: localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : []
+      cartItems: localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [],
+      showCheckout: false,
+      formData: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        address: ""
+      }
     }
     this.filterBy = this.filterBy.bind(this)
     this.sortBy = this.sortBy.bind(this)
     this.addToCart = this.addToCart.bind(this)
     this.removeItem = this.removeItem.bind(this)
+    this.checkout = this.checkout.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   filterBy(event) {
@@ -88,6 +98,25 @@ class Content extends React.Component {
         return(item.id !== removedItem.id) 
       })
     }))
+    localStorage.setItem("cartItems", JSON.stringify(this.state.cartItems.filter(item => {
+      return(item.id !== removedItem.id)
+    })))
+  }
+
+  checkout() {
+    this.setState({
+      showCheckout: true
+    })
+  }
+
+  handleChange(name, val) {
+    this.setState(prevState => ({
+      formData: {
+        ...prevState.formData,
+        [name]: val
+      }
+
+    }))
   }
 
   render() {
@@ -110,9 +139,12 @@ class Content extends React.Component {
           </div>
         </div>
         <div className="col-3 cart">
-          <CartHeader cartItems={this.state.cartItems}/>
-          <CartContents cartItems={this.state.cartItems} removeItem={this.removeItem}/>
-          <CartFooter cartItems={this.state.cartItems}/>
+          <CartHeader cartItems={this.state.cartItems} />
+          <CartContents cartItems={this.state.cartItems} removeItem={this.removeItem} />
+          <CartFooter cartItems={this.state.cartItems} checkout={this.checkout} />
+          {this.state.showCheckout && (
+            <CheckoutForm formData={this.state.formData} handleChange={this.handleChange}/>
+          )} 
         </div>
       </div>
     )
