@@ -176,7 +176,13 @@ class Content extends React.Component {
             />
           )}
         </div>
-        {product && <ProductDetails closeModal={this.closeModal} />}
+        {product && (
+          <ProductDetails
+            product={product}
+            closeModal={this.closeModal}
+            addToCart={this.addToCart}
+          />
+        )}
       </div>
     );
   }

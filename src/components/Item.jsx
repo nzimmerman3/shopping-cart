@@ -31,14 +31,14 @@ export default function Item(props) {
               </h5>
             </div>
             <div className="col text-right">
+              <div
+                className="btn btn-primary main"
+                onClick={() => props.addToCart(props.item)}
+              >
+                Add to cart
+              </div>
               <BrowserRouter>
-                <Link
-                  to="/product"
-                  className="btn btn-primary"
-                  onClick={() => props.addToCart(props.item)}
-                >
-                  Add to cart
-                </Link>
+                <Link></Link>
               </BrowserRouter>
             </div>
           </div>
