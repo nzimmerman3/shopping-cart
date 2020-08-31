@@ -1,13 +1,18 @@
-import React from 'react'
+import React from "react";
 
 export default function CheckoutForm(props) {
-  function handleChange(event) {
+  const handleChange = (event) => {
     // props.handleChange(event.target.)
-    props.handleChange(event.target.name, event.target.value)
-  }
+    props.handleChange(event.target.name, event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert("Hiya, " + props.formData.firstName);
+  };
 
   return (
-    <div onSubmit={props.handleSubmit}>
+    <div onSubmit={handleSubmit}>
       <form>
         <div>
           <label>Firstname:</label>
@@ -49,8 +54,8 @@ export default function CheckoutForm(props) {
             onChange={handleChange}
           />
         </div>
-
+        <input type="submit" value="Submit" />
       </form>
     </div>
-  )
+  );
 }
