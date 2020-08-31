@@ -6,23 +6,20 @@ export default function Item(props) {
   return (
     <div className="col col-sm-3 d-flex" style={{ minWidth: "25%" }}>
       <div className="card">
-        <div className="clickable">
+        <div className="clickable" onClick={() => props.openModal(props.item)}>
           <img
             className="card-img-top"
             src={props.item.image}
             alt={props.item.name}
-            onClick={() => props.openModal(props.item)}
           />
-          {/* <BrowserRouter>
-                        <Link to="/clickable" className="stretched-link"></Link>
-                      </BrowserRouter> */}
+          <div className="card-body">
+            <h5 className="card-title">{props.item.name}</h5>
+            <p className="card-text">
+              {formatDescription(props.item.description, 70)}
+            </p>
+          </div>
         </div>
-        <div className="card-body">
-          <h5 className="card-title">{props.item.name}</h5>
-          <p className="card-text">
-            {formatDescription(props.item.description, 70)}
-          </p>
-        </div>
+
         <div className="card-footer">
           <div className="row">
             <div className="col">
