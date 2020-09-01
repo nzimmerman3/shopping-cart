@@ -1,105 +1,127 @@
 body {
-    padding-bottom:0;   
-
+  padding-bottom: 0;
 }
 
 .card {
-    margin-bottom: 1rem;
-    justify-content: center;
+  margin-bottom: 1rem;
+  justify-content: center;
 }
 
 .row .col {
-    padding-left: 1vw;
-    padding-right: 1vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 
 .logo {
-    height: 3rem;
-    width: 3rem;
+  height: 3rem;
+  width: 3rem;
 }
 
-.card-title{
-    font-size: 1vw;
-    text-align: center;
+.card-title {
+  font-size: 1vw;
+  text-align: center;
 }
 
-.card-text{
-    font-size: 1vw;
+.card-text {
+  font-size: 1vw;
 }
 
-.card-text.card-price{
-    font-size: 1.5vw;
+.card-text.card-price {
+  font-size: 1.5vw;
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 .cart {
-    font-size: 1vw;
+  font-size: 1vw;
 }
 
 .clear {
-    clear: both;
+  clear: both;
 }
 
 .cart-footer-left {
-    float: left;
+  float: left;
 }
 
 .cart-footer-right {
-    float: right;
+  float: right;
 }
 
 .cart-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
 }
 
 .card .card-body {
-    padding: .5rem;
+  padding: 0.5rem;
 }
 
-.card-img-top{
-    height: 11vw;
-    object-fit: cover;
+.card-img-top {
+  height: 11vw;
+  object-fit: cover;
 }
 
-.btn.btn-primary {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    font-size: .7vw;
-    width: 4vw;
-    height: 2vw;
-    padding: 0 0;
+.btn.btn-primary.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  font-size: 0.7vw;
+  width: 4vw;
+  height: 2vw;
+  padding: 0 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.modal-btn {
+}
+
+.modal-img {
+  display: block;
+  /* height: 11vw; */
+  width: 20vw;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer {
-    background-color:#131921;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    margin-top: 10px;
+  background-color: #131921;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-top: 10px;
 }
-footer a{
-    color: white;
+footer a {
+  color: white;
 }
 
 .filter {
-    display: flex;
-    padding: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border-bottom: .1rem #c0c0c0 solid;
-    justify-content: space-between;
-    font-size: 1.5vw;
+  display: flex;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 0.1rem #c0c0c0 solid;
+  justify-content: space-between;
+  font-size: 1.5vw;
 }
 
-.filter div{
-    flex: 1;
+.filter div {
+  flex: 1;
 }
 
-.cart.filter{
-    text-align: center;
+.cart.filter {
+  text-align: center;
 }

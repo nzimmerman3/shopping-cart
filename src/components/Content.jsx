@@ -6,6 +6,7 @@ import CartContents from "./CartContents";
 import CartFooter from "./CartFooter";
 import Item from "./Item";
 import CheckoutForm from "./CheckoutForm";
+import ProductDetails from "./ProductDetails";
 
 class Content extends React.Component {
   constructor() {
@@ -24,6 +25,7 @@ class Content extends React.Component {
         email: "",
         address: "",
       },
+      product: null,
     };
     this.filterBy = this.filterBy.bind(this);
     this.sortBy = this.sortBy.bind(this);
@@ -31,6 +33,8 @@ class Content extends React.Component {
     this.removeItem = this.removeItem.bind(this);
     this.checkout = this.checkout.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   filterBy(event) {
@@ -119,7 +123,20 @@ class Content extends React.Component {
     }));
   }
 
+  openModal(item) {
+    this.setState({
+      product: item,
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      product: null,
+    });
+  }
+
   render() {
+    const { product } = this.state;
     return (
       <div className="row">
         <div className="col-9">
@@ -132,7 +149,13 @@ class Content extends React.Component {
           />
           <div className="row" style={{}}>
             {this.state.products.map((item) => {
-              return <Item item={item} addToCart={this.addToCart} />;
+              return (
+                <Item
+                  item={item}
+                  addToCart={this.addToCart}
+                  openModal={this.openModal}
+                />
+              );
             })}
           </div>
         </div>
@@ -153,6 +176,13 @@ class Content extends React.Component {
             />
           )}
         </div>
+        {product && (
+          <ProductDetails
+            product={product}
+            closeModal={this.closeModal}
+            addToCart={this.addToCart}
+          />
+        )}
       </div>
     );
   }
