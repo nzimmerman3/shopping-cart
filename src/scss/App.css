@@ -87,6 +87,15 @@ body {
 .modal-btn {
 }
 
+.modal-img {
+  display: block;
+  /* height: 11vw; */
+  width: 20vw;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .footer {
   background-color: #131921;
   color: white;
