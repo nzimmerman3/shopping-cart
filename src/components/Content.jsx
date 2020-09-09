@@ -7,6 +7,8 @@ import CartFooter from "./CartFooter";
 import Item from "./Item";
 import CheckoutForm from "./CheckoutForm";
 import ProductDetails from "./ProductDetails";
+import { fetchProducts } from "../actions/productAction";
+import { connect } from "react-redux";
 
 class Content extends React.Component {
   constructor() {
@@ -35,6 +37,10 @@ class Content extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchProducts();
   }
 
   filterBy(event) {
@@ -188,4 +194,6 @@ class Content extends React.Component {
   }
 }
 
-export default Content;
+export default connect((state) => ({ products: state.products.items }), {
+  fetchProducts,
+})(Content);
