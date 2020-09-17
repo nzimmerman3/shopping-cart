@@ -2,7 +2,6 @@ import React from "react";
 
 export default function CheckoutForm(props) {
   const handleChange = (event) => {
-    // props.handleChange(event.target.)
     props.handleChange(event.target.name, event.target.value);
   };
 
@@ -12,49 +11,57 @@ export default function CheckoutForm(props) {
   };
 
   return (
-    <div onSubmit={handleSubmit}>
-      <form>
-        <div>
-          <label>Firstname:</label>
+    <div className="container" onSubmit={handleSubmit}>
+      <form className="form">
+        <div className="form-group">
           <input
             type="text"
+            class="form-control"
+            id="firstName"
             name="firstName"
             required
+            placeholder="First name"
             value={props.formData.firstName}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Lastname:</label>
+        <div className="form-group">
           <input
             type="text"
+            class="form-control"
+            id="lastName"
             name="lastName"
             required
+            placeholder="Last name"
             value={props.formData.lastName}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Email:</label>
+        <div className="form-group">
           <input
             type="email"
+            class="form-control"
+            id="email"
             name="email"
             required
+            placeholder="Email"
             value={props.formData.email}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Address:</label>
+        <div className="form-group">
           <input
             type="text"
+            class="form-control"
+            id="address"
             name="address"
             required
+            placeholder="Address"
             value={props.formData.address}
             onChange={handleChange}
           />
         </div>
-        <input type="submit" value="Submit" />
+        <input className="btn btn-primary" type="submit" value="Submit" />
       </form>
     </div>
   );
