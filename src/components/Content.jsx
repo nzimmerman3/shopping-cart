@@ -1,5 +1,4 @@
 import React from "react";
-import data from "../data.json";
 import FilterBar from "./FilterBar";
 import CartHeader from "./CartHeader";
 import CartContents from "./CartContents";
@@ -11,10 +10,9 @@ import { fetchProducts } from "../actions/productAction";
 import { connect } from "react-redux";
 
 class Content extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      products: data,
       sort: "",
       filter: "",
       cartItems: localStorage.getItem("cartItems")
@@ -45,12 +43,18 @@ class Content extends React.Component {
 
   filterBy(event) {
     if (event.target.value === "") {
-      this.setState({ filter: event.target.value, products: data, sort: "" });
+      this.setState({
+        filter: event.target.value,
+        products: this.props.products,
+        sort: "",
+      });
     } else {
       this.setState({
         filter: event.target.value,
         sort: "",
-        products: data.filter((product) => product.type === event.target.value),
+        products: this.props.products.filter(
+          (product) => product.type === event.target.value
+        ),
       });
     }
   }
@@ -144,18 +148,20 @@ class Content extends React.Component {
   render() {
     const { product } = this.state;
 
-    return !this.state.showCheckout ? (
+    return !this.props.products ? (
+      <div>Loading...</div>
+    ) : !this.state.showCheckout ? (
       <div className="row">
         <div className="col-9">
           <FilterBar
-            count={this.state.products.length}
+            count={this.props.products.length}
             sort={this.state.sort}
             filter={this.state.filter}
             filterBy={this.filterBy}
             sortBy={this.sortBy}
           />
           <div className="row" style={{}}>
-            {this.state.products.map((item) => {
+            {this.props.products.map((item) => {
               return (
                 <Item
                   item={item}

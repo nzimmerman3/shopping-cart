@@ -1,9 +1,9 @@
 import { FETCH_PRODUCTS } from "../types";
+import data from "../data.json";
 
 export const fetchProducts = () => async (dispatch) => {
-  const res = await fetch("/api/products");
   dispatch({
     type: FETCH_PRODUCTS,
-    payload: res.formData,
+    payload: data,
   });
 };
