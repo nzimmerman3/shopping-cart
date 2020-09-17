@@ -125,3 +125,7 @@ footer a {
 .cart.filter {
   text-align: center;
 }
+
+.form {
+  margin-top: 15px;
+}

@@ -143,7 +143,8 @@ class Content extends React.Component {
 
   render() {
     const { product } = this.state;
-    return (
+
+    return !this.state.showCheckout ? (
       <div className="row">
         <div className="col-9">
           <FilterBar
@@ -175,12 +176,6 @@ class Content extends React.Component {
             cartItems={this.state.cartItems}
             checkout={this.checkout}
           />
-          {this.state.showCheckout && (
-            <CheckoutForm
-              formData={this.state.formData}
-              handleChange={this.handleChange}
-            />
-          )}
         </div>
         {product && (
           <ProductDetails
@@ -190,6 +185,11 @@ class Content extends React.Component {
           />
         )}
       </div>
+    ) : (
+      <CheckoutForm
+        formData={this.state.formData}
+        handleChange={this.handleChange}
+      />
     );
   }
 }
