@@ -8,6 +8,7 @@ import CheckoutForm from "./CheckoutForm";
 import ProductDetails from "./ProductDetails";
 import { fetchProducts } from "../actions/productAction";
 import { connect } from "react-redux";
+import history from "../history";
 
 class Content extends React.Component {
   constructor(props) {
@@ -32,7 +33,6 @@ class Content extends React.Component {
     this.addToCart = this.addToCart.bind(this);
     this.removeItem = this.removeItem.bind(this);
     this.checkout = this.checkout.bind(this);
-    this.handleChange = this.handleChange.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
@@ -119,18 +119,10 @@ class Content extends React.Component {
   }
 
   checkout() {
-    this.setState({
-      showCheckout: true,
+    history.push({
+      pathname: "/checkout",
     });
-  }
-
-  handleChange(name, val) {
-    this.setState((prevState) => ({
-      formData: {
-        ...prevState.formData,
-        [name]: val,
-      },
-    }));
+    window.location.reload();
   }
 
   openModal(item) {
@@ -192,10 +184,7 @@ class Content extends React.Component {
         )}
       </div>
     ) : (
-      <CheckoutForm
-        formData={this.state.formData}
-        handleChange={this.handleChange}
-      />
+      <CheckoutForm />
     );
   }
 }
